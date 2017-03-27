@@ -8,7 +8,7 @@ export default {
     console.warn('mostviewed', offset)
     return axios({
       method: 'get',
-      url: 'http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json',
+      url: 'https://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json',
       params: {
         'api-key': '11b83c713ccf4496ac47305da7d2295f',
         offset

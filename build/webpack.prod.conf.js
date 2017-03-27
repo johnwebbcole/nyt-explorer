@@ -32,9 +32,11 @@ var webpackConfig = merge(baseWebpackConfig, {
       'process.env': env
     }),
     new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
+      // compress: {
+      //   warnings: false
+      // },
+      compress: false,
+      mangle: false,
       sourceMap: true
     }),
     // extract css into its own file
@@ -59,8 +61,8 @@ var webpackConfig = merge(baseWebpackConfig, {
       inject: true,
       minify: {
         removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true
+        collapseWhitespace: false,
+        removeAttributeQuotes: false
         // more options:
         // https://github.com/kangax/html-minifier#options-quick-reference
       },

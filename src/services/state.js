@@ -64,8 +64,8 @@ const _create = async function () {
 
   var db = await RxDB.create({
     name: 'nytdb2',
-    adapter: 'fruitdown',
-    // adapter: 'memory', // 'fruitdown',
+    // adapter: 'fruitdown',
+    adapter: 'memory', // 'fruitdown',
     multiInstance: true
   })
 

@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="detail">
-    <md-card v-if="id">
+    <md-card v-if="data">
       <md-card-media-cover md-solid>
         <md-card-media md-ratio="1:1">
           <md-image :md-src="image"></md-image>
@@ -18,7 +18,8 @@
         </md-card-area>
       </md-card-media-cover>
     </md-card>
-    <span v-else>Loading...</span>
+    <span v-else-if="id">Loading...</span>
+    <span v-else></span>
   </div>
 </template>
 
@@ -35,21 +36,21 @@ export default {
   },
   created: function () {
     this.load()
-    console.log('detail created', this.id, this.data)
+    // console.log('detail created', this.id, this.data)
   },
   watch: {
     id: 'load'
   },
   methods: {
     async load () {
-      console.log('detail.load', this.id)
+      // console.log('detail.load', this.id)
       if (!this.id) return
       const db = await state.get()
       this.data = await db.articles.findOne({id: this.id}).exec()
 
       if (this.data) this.image = this.data.media[0]['media-metadata'][0].url
-      console.log('detail.load', this.id, this.data && this.data.toJSON())
-      console.log('img', this.image)
+      // console.log('detail.load', this.id, this.data && this.data.toJSON())
+      // console.log('img', this.image)
     }
   }
 }

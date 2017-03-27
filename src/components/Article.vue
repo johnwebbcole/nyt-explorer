@@ -34,7 +34,7 @@ export default {
   align-items: center;
 }
 .text-icon-letter {
-  margin-top: -10px;
+  margin-top: 2px;
   color: white;
   font-size: 24px;
   width: 24px;

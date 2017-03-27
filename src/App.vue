@@ -42,12 +42,12 @@ export default {
   mounted: async function () {
     const db = await state.get()
 
-    // // debugging
-    // var foo = await db.config.upsert({
-    //   name: 'apikey',
-    //   value: '11b83c713ccf4496ac47305da7d2295f'
-    // })
-    // console.log('foo', foo)
+    // debugging
+    var newkey = await db.config.upsert({
+      name: 'apikey',
+      value: '11b83c713ccf4496ac47305da7d2295f'
+    })
+    console.log('newkey', newkey)
 
     const apikey = await db.config.findOne({name: 'apikey'}).exec()
     if (!apikey || !apikey.value) {

@@ -60,15 +60,16 @@ export default {
     },
     async refresh () {
       this.results = undefined
-      await nyt.reload()
-      await this.load()
-      console.log('home refresh', this.results)
+      await nyt.reload(async (d) => {
+        await this.load()
+        // console.log('home refresh', d, this.results)
+      })
     },
     setId () {
-      console.log('setId', this.$route, this.id)
+      // console.log('setId', this.$route, this.id)
     },
     go (id) {
-      console.log('go', id)
+      // console.log('go', id)
       this.$router.push({path: `/home/${id}`})
     }
   }

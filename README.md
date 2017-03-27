@@ -4,6 +4,16 @@
 
 > See the New York Times most popular articles.
 
+![example](docs/nyt-explorer.gif)
+
+## Running
+
+The site is using a 'memory' databae, so reloading the page means you need to refresh your article list.
+
+When you first load the page, you need to reload the articles, press the reload icon in the upper left part of the page.
+
+You can click on each article to see a small preview and from there, continue on to the article on the nyt website.
+
 ## Build Setup
 
 ``` bash

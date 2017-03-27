@@ -1,0 +1,13 @@
+1) The purpose of the site is to explore using RxDB and RxJS together to
+  access The New York Times api.
+
+2) This site was created using VueJS 2.0, Webpack 2.0, Vue-Material, and Axios for http access.
+
+3) During development I discovered that the NYT api is configured incorrectly for CORS.  According to the CORS spec, https://www.w3.org/TR/cors/#preflight-request the preflight request should NOT include credentials.  The NYT api requires credentials for the OPTION preflight request.  The upshot is that you have to include the 'api-key' in the query string and not in the header for a browser based request.
+
+Other changes to the API that would be nice include:
+ * larger download sizes (20 is hard coded)
+ * meta data access (you have to hunt to find out what the query options are)
+ * faster access (rated limited to 5/second)
+
+4) Instructions for building the site are included in the README.md file.  You can also go to https://johnwebbcole.github.io/nyt-explorer/ which provides the SPA as a static file.
